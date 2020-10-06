@@ -4,10 +4,9 @@ import java.util.*;
 class AddressBookMain {
 	public static Scanner sc = new Scanner(System.in);
 	private static AddressBook addressBook = new AddressBook();
+	public Map<String,AddressBook> addressBookListMap = new HashMap<>();
 
-
-	public static void main(String[] args) {
-		System.out.println("Welcome to the Address Book Management System using Java Stream");
+	public void addAddressBook(String bookName){
 		AddressBookMain addBookMain = new AddressBookMain();
 		boolean flag = true;
 
@@ -31,7 +30,7 @@ class AddressBookMain {
 				}
 				break;
 
-			case 2: 
+			case 2:
 				System.out.println("Enter the Person First name to edit details: ");
 				String personName = sc.next();
 
@@ -60,8 +59,38 @@ class AddressBookMain {
 
 			}
 		}
+	}
+
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Address Book Management System using Java Stream");
+		AddressBookMain addressBookMain = new AddressBookMain();
+		boolean flag =true;
+		while(flag)
+		{
+			System.out.println("1.Add New Address Book");
+			System.out.println("2.Exit");
+			System.out.println("Enter choice: ");
+			int option = sc.nextInt();
+			switch (option){
+			case 1: {
+				System.out.println("Enter the Name of Address Book: ");
+				String addressBookName = sc.next();
+				if(addressBookMain.addressBookListMap.containsKey(addressBookName)){
+					System.out.println("The Address book Already Exists");
+					break;
+				}else {
+					addressBookMain.addAddressBook(addressBookName);
+					break;
+				}
+			}
+			case 2:{
+				flag = false;
+				break;
+			}
+			}
+		}
+
 
 	}
 }
-
-
