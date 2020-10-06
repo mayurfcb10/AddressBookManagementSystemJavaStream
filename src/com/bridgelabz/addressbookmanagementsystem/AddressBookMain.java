@@ -23,8 +23,12 @@ class AddressBookMain {
 
 			switch (option)
 			{
-			case 1: 
-				addressBook.addContactDetails();
+			case 1:
+				System.out.println("Enter the number of Contacts to be added");
+				int noOfContacts = sc.nextInt();
+				for(int i = 0; i < noOfContacts; i++) {
+					addressBook.addContactDetails();
+				}
 				break;
 
 			case 2: 
@@ -59,3 +63,5 @@ class AddressBookMain {
 
 	}
 }
+
+
