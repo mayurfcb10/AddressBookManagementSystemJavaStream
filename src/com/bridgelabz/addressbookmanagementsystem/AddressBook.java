@@ -126,7 +126,6 @@ public class AddressBook {
         return flag == 1;
     }
 
-
     public boolean deleteContact(String name) {
         int flag = 0;
         for (ContactDetails contact : contactList) {
@@ -164,5 +163,5 @@ public class AddressBook {
             System.out.println("Last Name: "+contact.getLastName());
         }
     }
-
+    
 }
