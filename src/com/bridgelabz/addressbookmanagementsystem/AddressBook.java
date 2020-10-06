@@ -1,3 +1,4 @@
+
 package com.bridgelabz.addressbookmanagementsystem;
 
 import java.util.*;
@@ -103,6 +104,24 @@ public class AddressBook {
 
 				}
 
+				flag = 1;
+				break;
+			}
+		}
+		if(flag==1)
+			return true;
+		else
+			return false;
+	}
+
+
+	public boolean deleteContact(String name) {
+		int flag = 0;
+		for(ContactDetails contact: contactList)
+		{
+			if(contact.getFirstName().equals(name))
+			{
+				contactList.remove(contact);
 				flag = 1;
 				break;
 			}
